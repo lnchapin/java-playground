@@ -2,8 +2,17 @@ package com.galvanize;
 
 public class BankAccount {
     private String name;
-    private float balance;
+    private float balance = 0.00f;
     private boolean isOverDrawn;
+
+    @Override
+    public String toString() {
+        return "BankAccount {" +
+                "name = " + name +
+                ", balance = " + balance +
+                ", is Overdrawn = " + isOverDrawn +
+                "}";
+    }
 
     public void deposit (float value){
         balance += value;
@@ -13,7 +22,7 @@ public class BankAccount {
     }
 
     public void balance() {
-        System.out.printf("balance");
+        System.out.println(balance);
     }
 
     public void isOverDrawn(){

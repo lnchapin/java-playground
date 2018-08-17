@@ -10,5 +10,10 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        BankAccount banking = new BankAccount();
+        banking.deposit(5.05f);
+        banking.isOverDrawn();
+        banking.balance();
+        System.out.println(banking);
     }
 }
