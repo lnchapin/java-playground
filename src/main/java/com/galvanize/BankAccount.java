@@ -1,9 +1,9 @@
 package com.galvanize;
 
-public class BankAccount {
-    private String name;
-    private float balance = 0.00f;
-    private boolean isOverDrawn;
+class BankAccount {
+    public String name;
+    public float balance = 0.00f;
+    public boolean isOverDrawn;
 
     @Override
     public String toString() {
@@ -14,22 +14,25 @@ public class BankAccount {
                 "}";
     }
 
-    public void deposit (float value){
-        balance += value;
+    public void deposit (long cents){
+        balance += (cents/1f);
     }
-    public void withdraw (float value){
-        balance -= value;
-    }
-
-    public void balance() {
-        System.out.println(balance);
+    public void withdraw (long cents){
+        balance -= (cents/1f);
     }
 
-    public void isOverDrawn(){
+    public float balance() {
+        return balance;
+    }
+
+    public boolean isOverDrawn(){
         if (balance < 0) {
             isOverDrawn = true;
+            return true;
         } else {
             isOverDrawn = false;
+            return false;
         }
     }
 }
+
